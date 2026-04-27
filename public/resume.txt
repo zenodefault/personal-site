@@ -1,0 +1,6 @@
+Placeholder Resume
+==================
+
+This is a placeholder resume artifact for the first implementation pass.
+
+Replace this file with your real resume PDF or a richer downloadable asset later.

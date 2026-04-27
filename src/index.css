@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --color-ink: 0 0 0;
+  --color-panel: 12 12 12;
+  --color-muted: 17 17 17;
+  --color-line: 204 204 204;
+  --color-accent: 0 255 136;
+  --color-signal: 0 255 136;
+  --color-mist: 85 85 85;
+  --color-text-primary: 204 204 204;
+  --color-text-secondary: 85 85 85;
+  --color-text-inverse: 0 221 255;
+  --focus-ring: 0 221 255;
+  font-family: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+  background-color: rgb(var(--color-ink));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgb(var(--color-muted) / 0.5), transparent 35%),
+    linear-gradient(180deg, rgb(var(--color-ink)), rgb(var(--color-ink)));
+  color: rgb(var(--color-text-primary));
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22.1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.scanlines {
+  background-image: linear-gradient(rgb(var(--color-text-primary) / 0.035) 1px, transparent 1px);
+  background-size: 100% 4px;
+  mix-blend-mode: soft-light;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--focus-ring));
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

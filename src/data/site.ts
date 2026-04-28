@@ -1,7 +1,7 @@
 import type { ContactLink, NavItem, Project, SkillGroup } from '../lib/types';
 
 export const navItems: NavItem[] = [
-  { id: 'about', label: './about', command: 'cat about.md', description: 'read the operator profile' },
+  { id: 'about', label: './about', command: 'cat ./about.txt', description: 'read the operator profile' },
   {
     id: 'projects',
     label: './projects',

@@ -50,13 +50,23 @@ function App() {
           <Section
             id="about"
             title="cat ./about.txt"
-            summary="this is temporary about content for layout and styling only. replace it with a real introduction later."
           >
-            <TerminalWindow title="about.txt" subtitle="placeholder copy">
+            <TerminalWindow title="about.txt" subtitle="operator.profile">
               <div className="space-y-4 text-md text-textSecondary">
-                <p>dummy paragraph one for the about section.</p>
-                <p>dummy paragraph two for the about section.</p>
-                <p>dummy paragraph three for the about section.</p>
+                <p>
+                  Hey, I'm a 2nd-year engineering student from Bangalore, carving my own path in tech—one commit at a
+                  time. I learn by building: every project is a playground for curiosity, and the idea that my code can
+                  create real, tangible impact is what keeps me shipping.
+                </p>
+                <p>
+                  Currently deep in web development, AI/ML integration, and low-level systems tinkering. I believe clean
+                  architecture &gt; flashy features, and I love crafting tools that are fast, private, and work
+                  anywhere—even offline.
+                </p>
+                <p>
+                  Always exploring what's next. Open to internships, hackathons, and building purposeful software with
+                  fellow creators. Let's connect and make something cool.
+                </p>
               </div>
             </TerminalWindow>
           </Section>

@@ -19,11 +19,11 @@ export function TerminalWindow({ title, subtitle, className, children }: Termina
             <span className="h-2 w-2 rounded-full bg-signal/40" />
           </div>
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-textPrimary">{title}</p>
-            {subtitle ? <p className="mt-1 text-xs text-textSecondary">{subtitle}</p> : null}
+            <p className="font-mono text-md text-textPrimary">{title}</p>
+            {subtitle ? <p className="mt-1 text-md text-textSecondary">{subtitle}</p> : null}
           </div>
         </div>
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal">active</p>
+        <p className="font-mono text-md text-signal">active</p>
       </div>
       <div className="p-5 md:p-6">{children}</div>
     </article>

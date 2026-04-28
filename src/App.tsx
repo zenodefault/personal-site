@@ -1,11 +1,10 @@
-import { CommandPalette } from './components/CommandPalette';
 import { Section } from './components/Section';
 import { TerminalWindow } from './components/TerminalWindow';
 import { contactLinks, navItems, projects, skillGroups } from './data/site';
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-ink text-textPrimary">
+    <div className="relative min-h-screen overflow-hidden bg-ink text-textPrimary lowercase">
       <div className="pointer-events-none absolute inset-0 bg-grid bg-[size:32px_32px] opacity-[0.08]" />
       <div className="scanlines pointer-events-none absolute inset-0 opacity-30" />
 
@@ -17,8 +16,8 @@ function App() {
                 &gt;_
               </div>
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal">zenodefault</p>
-                <p className="font-mono text-sm text-textSecondary">operator dashboard</p>
+                <p className="font-mono text-md text-signal">zenodefault</p>
+                <p className="font-mono text-md text-textSecondary">operator dashboard</p>
               </div>
             </div>
 
@@ -27,39 +26,45 @@ function App() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="font-mono text-xs uppercase tracking-[0.2em] text-textSecondary transition duration-instant hover:text-textPrimary"
+                  className="font-mono text-md text-textSecondary transition duration-instant hover:text-textPrimary"
                 >
                   {item.label}
                 </a>
               ))}
             </nav>
-
-            <CommandPalette items={navItems} />
           </div>
         </header>
 
         <main className="flex-1">
+          <div className="flex flex-col items-center justify-center overflow-hidden border-b border-muted/30 py-12 text-signal">
+            <pre className="whitespace-pre font-mono text-[0.45rem] leading-[1.1] sm:text-[0.6rem] md:text-xs">
+              {`███████╗███████╗███╗   ██╗ ██████╗ ██████╗ ███████╗███████╗ █████╗ ██╗   ██╗██║  ████████╗
+╚══███╔╝██╔════╝████╗  ██║██╔════██╗██╔══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██║  ╚══██╔══╝
+  ███╔╝ █████╗  ██╔██╗ ██║██║   ██║██║  ██║█████╗  █████╗  ███████║██║   ██║██║     ██║   
+ ███╔╝  ██╔══╝  ██║╚██╗██║██║   ██║██║  ██║██╔══╝  ██╔══╝  ██╔══██║██║   ██║██║     ██║   
+███████╗███████╗██║ ╚████║╚██████╔╝██████╔╝███████╗██║     ██║  ██║╚██████╔╝███████╗██║   
+╚══════╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝`}
+            </pre>
+          </div>
+
           <Section
             id="about"
-            kicker="profile"
-            title="About section placeholder."
-            summary="This is temporary about content for layout and styling only. Replace it with a real introduction later."
-            aside={<div className="bg-muted px-4 py-3 font-mono text-xs uppercase tracking-[0.2em] text-signal">about.txt</div>}
+            title="cat ./about.txt"
+            summary="this is temporary about content for layout and styling only. replace it with a real introduction later."
           >
-            <TerminalWindow title="about.md" subtitle="placeholder copy">
+            <TerminalWindow title="about.txt" subtitle="placeholder copy">
               <div className="space-y-4 text-md text-textSecondary">
-                <p>Dummy paragraph one for the about section.</p>
-                <p>Dummy paragraph two for the about section.</p>
-                <p>Dummy paragraph three for the about section.</p>
+                <p>dummy paragraph one for the about section.</p>
+                <p>dummy paragraph two for the about section.</p>
+                <p>dummy paragraph three for the about section.</p>
               </div>
             </TerminalWindow>
           </Section>
 
           <Section
             id="projects"
-            kicker="featured work"
-            title="Projects section placeholder."
-            summary="Temporary project cards for testing spacing, hierarchy, and terminal-style presentation."
+            title="./projects"
+            summary="temporary project cards for testing spacing, hierarchy, and terminal-style presentation."
           >
             <div className="grid gap-6 lg:grid-cols-3">
               {projects.map((project, index) => (
@@ -73,12 +78,12 @@ function App() {
                     <p className="text-md text-textSecondary">{project.summary}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.stack.map((item) => (
-                        <span key={item} className="bg-muted px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-textPrimary">
+                        <span key={item} className="bg-muted px-3 py-1 font-mono text-md text-textPrimary">
                           {item}
                         </span>
                       ))}
                     </div>
-                    <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal">{project.status}</p>
+                    <p className="font-mono text-md text-signal">{project.status}</p>
                   </div>
                 </TerminalWindow>
               ))}
@@ -87,14 +92,13 @@ function App() {
 
           <Section
             id="skills"
-            kicker="capabilities"
-            title="Skills section placeholder."
-            summary="Temporary skill groups to help shape the final content layout."
+            title="./skills"
+            summary="temporary skill groups to help shape the final content layout."
           >
             <div className="grid gap-6 md:grid-cols-3">
               {skillGroups.map((group) => (
                 <TerminalWindow key={group.title} title={group.title} subtitle="active toolset">
-                  <ul className="space-y-3 font-mono text-sm text-textSecondary">
+                  <ul className="space-y-3 font-mono text-md text-textSecondary">
                     {group.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span className="mt-2 h-1.5 w-1.5 rounded-full bg-signal" />
@@ -109,9 +113,8 @@ function App() {
 
           <Section
             id="contact"
-            kicker="comms"
-            title="Contact section placeholder."
-            summary="Temporary contact information for structure only. Replace with real links and availability details later."
+            title="./socials"
+            summary="temporary contact information for structure only. replace with real links and availability details later."
           >
             <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
               <TerminalWindow title="ping.operator" subtitle="open channels">
@@ -125,10 +128,10 @@ function App() {
                       className="flex items-center justify-between gap-4 bg-muted px-4 py-4 transition duration-instant hover:bg-panel focus:outline-none"
                     >
                       <div>
-                        <p className="font-mono text-xs uppercase tracking-[0.2em] text-signal">{link.label}</p>
-                        <p className="mt-2 text-sm text-textPrimary">{link.value}</p>
+                        <p className="font-mono text-md text-signal">{link.label}</p>
+                        <p className="mt-2 text-md text-textPrimary">{link.value}</p>
                       </div>
-                      <span className="font-mono text-xs uppercase tracking-[0.2em] text-textSecondary">open</span>
+                      <span className="font-mono text-md text-textSecondary">open</span>
                     </a>
                   ))}
                 </div>
@@ -136,9 +139,9 @@ function App() {
 
               <TerminalWindow title="notes.txt" subtitle="placeholder message">
                 <div className="space-y-4 text-md text-textSecondary">
-                  <p>Dummy contact note one for the right-side panel.</p>
-                  <p>Dummy contact note two for the right-side panel.</p>
-                  <p>Dummy contact note three for the right-side panel.</p>
+                  <p>dummy contact note one for the right-side panel.</p>
+                  <p>dummy contact note two for the right-side panel.</p>
+                  <p>dummy contact note three for the right-side panel.</p>
                 </div>
               </TerminalWindow>
             </div>

@@ -1,71 +1,71 @@
 import type { ContactLink, NavItem, Project, SkillGroup } from '../lib/types';
 
 export const navItems: NavItem[] = [
-  { id: 'about', label: 'About', command: 'cat about.md', description: 'Read the operator profile' },
+  { id: 'about', label: './about', command: 'cat about.md', description: 'read the operator profile' },
   {
     id: 'projects',
-    label: 'Projects',
+    label: './projects',
     command: 'ls projects/',
-    description: 'Inspect featured work and experiments',
+    description: 'inspect featured work and experiments',
   },
   {
     id: 'skills',
-    label: 'Skills',
+    label: './skills',
     command: 'env capabilities',
-    description: 'Review stack fluency and specialties',
+    description: 'review stack fluency and specialties',
   },
   {
     id: 'contact',
-    label: 'Contact',
+    label: './socials',
     command: 'ping operator',
-    description: 'Open the communication channels',
+    description: 'open the communication channels',
   },
 ];
 
 export const projects: Project[] = [
   {
-    name: 'Dummy Project One',
-    summary: 'Short placeholder summary for a featured project. Replace this with a real project description later.',
-    stack: ['React', 'TypeScript', 'UI'],
+    name: 'dummy project one',
+    summary: 'short placeholder summary for a featured project. replace this with a real project description later.',
+    stack: ['react', 'typescript', 'ui'],
     href: '#',
-    status: 'Placeholder',
+    status: 'placeholder',
   },
   {
-    name: 'Dummy Project Two',
-    summary: 'Another placeholder project entry for layout testing, spacing checks, and content structure.',
-    stack: ['Frontend', 'Design', 'Motion'],
+    name: 'dummy project two',
+    summary: 'another placeholder project entry for layout testing, spacing checks, and content structure.',
+    stack: ['frontend', 'design', 'motion'],
     href: '#',
-    status: 'Placeholder',
+    status: 'placeholder',
   },
   {
-    name: 'Dummy Project Three',
-    summary: 'Temporary content block for a future case study, prototype, or interactive experiment.',
-    stack: ['Prototype', 'Research', 'Build'],
+    name: 'dummy project three',
+    summary: 'temporary content block for a future case study, prototype, or interactive experiment.',
+    stack: ['prototype', 'research', 'build'],
     href: '#',
-    status: 'Placeholder',
+    status: 'placeholder',
   },
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: 'Dummy Skills',
-    items: ['Skill placeholder A', 'Skill placeholder B', 'Skill placeholder C'],
+    title: 'dummy skills',
+    items: ['skill placeholder a', 'skill placeholder b', 'skill placeholder c'],
   },
   {
-    title: 'Tools',
-    items: ['Tool placeholder A', 'Tool placeholder B', 'Tool placeholder C'],
+    title: 'tools',
+    items: ['tool placeholder a', 'tool placeholder b', 'tool placeholder c'],
   },
   {
-    title: 'Focus Areas',
-    items: ['Focus placeholder A', 'Focus placeholder B', 'Focus placeholder C'],
+    title: 'focus areas',
+    items: ['focus placeholder a', 'focus placeholder b', 'focus placeholder c'],
   },
 ];
 
 export const contactLinks: ContactLink[] = [
-  { label: 'Email', value: 'your@email.com', href: 'mailto:your@email.com' },
-  { label: 'GitHub', value: 'github.com/yourname', href: 'https://github.com/yourname' },
+  { label: 'email', value: 'your@email.com', href: 'mailto:your@email.com' },
+  { label: 'github', value: 'github.com/yourname', href: 'https://github.com/yourname' },
   {
-    label: 'LinkedIn',
+    label: 'linkedin',
     value: 'linkedin.com/in/yourname',
     href: 'https://linkedin.com/in/yourname',
   },

@@ -1,7 +1,7 @@
 import type { ContactLink, NavItem, Project, SkillGroup } from '../lib/types';
 
 export const navItems: NavItem[] = [
-  { id: 'about', label: './about', command: 'cat ./about.txt', description: 'read the operator profile' },
+  { id: 'about', label: './about', command: 'cat about.txt', description: 'read the operator profile' },
   {
     id: 'projects',
     label: './projects',
@@ -17,7 +17,7 @@ export const navItems: NavItem[] = [
   {
     id: 'contact',
     label: './socials',
-    command: 'ping operator',
+    command: 'ping operator --socials',
     description: 'open the communication channels',
   },
 ];
@@ -62,11 +62,8 @@ export const skillGroups: SkillGroup[] = [
 ];
 
 export const contactLinks: ContactLink[] = [
-  { label: 'email', value: 'your@email.com', href: 'mailto:your@email.com' },
-  { label: 'github', value: 'github.com/yourname', href: 'https://github.com/yourname' },
-  {
-    label: 'linkedin',
-    value: 'linkedin.com/in/yourname',
-    href: 'https://linkedin.com/in/yourname',
-  },
+  { label: 'x/twitter', value: '@zenodefault99', href: 'https://x.com/zenodefault99' },
+  { label: 'github', value: 'zenodefault', href: 'https://github.com/zenodefault' },
+  { label: 'anilist', value: 'Naveedkun', href: 'https://anilist.co/user/Naveedkun/' },
+  { label: 'spotify', value: 'zenodefault', href: 'https://open.spotify.com/user/5991xd4ts74felvg5rskl6zo7?si=sGyuk3EgRo2SZDhDKHOlgA' },
 ];

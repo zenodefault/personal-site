@@ -123,41 +123,54 @@ function App() {
             </div>
           </Section>
 
-          <Section
-            id="contact"
-            title="./socials"
-            summary="temporary contact information for structure only. replace with real links and availability details later."
-          >
-            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-              <TerminalWindow title="ping.operator" subtitle="open channels">
-                <div className="space-y-5">
+          <div id="contact" className="py-24 border-t border-muted/30">
+            <div className="mx-auto max-w-3xl px-6 font-mono">
+              <div className="mb-8 flex items-center gap-2 text-sm md:text-md opacity-70">
+                <span className="text-signal">zenodefault@system</span>
+                <span className="text-textSecondary">:</span>
+                <span className="text-textInverse">~</span>
+                <span className="text-textSecondary">$</span>
+                <span className="text-white">ping operator --socials</span>
+              </div>
+
+              <div className="space-y-6">
+                <div className="grid gap-4 md:grid-cols-2">
                   {contactLinks.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
-                      target={link.href.startsWith('http') ? '_blank' : undefined}
-                      rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                      className="flex items-center justify-between gap-4 bg-muted px-4 py-4 transition duration-instant hover:bg-panel focus:outline-none"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center justify-between border border-muted/30 bg-muted/10 p-4 transition duration-instant hover:border-signal/50 hover:bg-signal/5"
                     >
-                      <div>
-                        <p className="font-mono text-md text-signal">{link.label}</p>
-                        <p className="mt-2 text-md text-textPrimary">{link.value}</p>
+                      <div className="space-y-1">
+                        <p className="text-sm text-textSecondary group-hover:text-signal/80 transition-colors uppercase tracking-wider">
+                          {link.label}
+                        </p>
+                        <p className="text-lg text-white group-hover:text-textInverse transition-colors">
+                          {link.value}
+                        </p>
                       </div>
-                      <span className="font-mono text-md text-textSecondary">open</span>
+                      <span className="text-signal opacity-0 group-hover:opacity-100 transition-opacity">
+                        &lt;open /&gt;
+                      </span>
                     </a>
                   ))}
                 </div>
-              </TerminalWindow>
 
-              <TerminalWindow title="notes.txt" subtitle="placeholder message">
-                <div className="space-y-4 text-md text-textSecondary">
-                  <p>dummy contact note one for the right-side panel.</p>
-                  <p>dummy contact note two for the right-side panel.</p>
-                  <p>dummy contact note three for the right-side panel.</p>
+                <div className="mt-10 pt-8 border-t border-muted/20">
+                  <p className="text-xl text-white/80 leading-relaxed italic">
+                    "Open to internships, hackathons, and building purposeful software with fellow creators."
+                  </p>
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="text-signal">STATUS:</span>
+                    <span className="text-white">LISTENING_FOR_PINGS</span>
+                    <span className="inline-block h-5 w-2.5 bg-signal animate-blink align-middle" />
+                  </div>
                 </div>
-              </TerminalWindow>
+              </div>
             </div>
-          </Section>
+          </div>
         </main>
       </div>
     </div>

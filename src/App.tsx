@@ -36,7 +36,7 @@ function App() {
         </header>
 
         <main className="flex-1">
-          <div className="flex flex-col items-center justify-center overflow-hidden border-b border-muted/30 py-12 text-signal">
+          <div id="about" className="flex flex-col items-center justify-center overflow-hidden border-b border-muted/30 py-24 text-signal">
             <pre className="whitespace-pre font-mono text-[0.45rem] leading-[1.1] sm:text-[0.6rem] md:text-xs">
               {`███████╗███████╗███╗   ██╗ ██████╗ ██████╗ ███████╗███████╗ █████╗ ██╗   ██╗██║  ████████╗
 ╚══███╔╝██╔════╝████╗  ██║██╔════██╗██╔══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██║  ╚══██╔══╝
@@ -45,31 +45,33 @@ function App() {
 ███████╗███████╗██║ ╚████║╚██████╔╝██████╔╝███████╗██║     ██║  ██║╚██████╔╝███████╗██║   
 ╚══════╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝`}
             </pre>
-          </div>
+            
+            <div className="mt-16 w-full max-w-3xl px-6 font-mono">
+              <div className="mb-6 flex items-center gap-2 text-sm md:text-md opacity-70">
+                <span className="text-signal">zenodefault@system</span>
+                <span className="text-textSecondary">:</span>
+                <span className="text-textInverse">~</span>
+                <span className="text-textSecondary">$</span>
+                <span className="text-white">cat about.txt</span>
+              </div>
 
-          <Section
-            id="about"
-            title="cat ./about.txt"
-          >
-            <TerminalWindow title="about.txt" subtitle="operator.profile">
-              <div className="space-y-4 text-md text-textSecondary">
+              <div className="space-y-8 text-xl text-white/90 md:text-2xl leading-relaxed">
                 <p>
-                  Hey, I'm a 2nd-year engineering student from Bangalore, carving my own path in tech—one commit at a
+                  Hey, I'm a <span className="text-signal">2nd-year engineering student</span> from <span className="text-textInverse">Bangalore</span>, carving my own path in tech—one commit at a
                   time. I learn by building: every project is a playground for curiosity, and the idea that my code can
-                  create real, tangible impact is what keeps me shipping.
+                  create real, <span className="text-signal">tangible impact</span> is what keeps me shipping.
                 </p>
                 <p>
-                  Currently deep in web development, AI/ML integration, and low-level systems tinkering. I believe clean
-                  architecture &gt; flashy features, and I love crafting tools that are fast, private, and work
+                  Currently deep in <span className="text-textInverse">web development</span>, <span className="text-signal">AI/ML integration</span>, and low-level systems tinkering. I believe <span className="text-white border-b border-signal/30">clean architecture &gt; flashy features</span>, and I love crafting tools that are fast, private, and work
                   anywhere—even offline.
                 </p>
                 <p>
-                  Always exploring what's next. Open to internships, hackathons, and building purposeful software with
-                  fellow creators. Let's connect and make something cool.
+                  Always exploring what's next. Open to <span className="text-signal">internships</span>, hackathons, and building <span className="text-white">purposeful software</span> with
+                  fellow creators. Let's connect and make something cool<span className="inline-block h-6 w-3 bg-signal ml-2 animate-blink align-middle" />
                 </p>
               </div>
-            </TerminalWindow>
-          </Section>
+            </div>
+          </div>
 
           <Section
             id="projects"

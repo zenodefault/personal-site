@@ -25,6 +25,9 @@ export default {
         sm: ['12px', '20px'],
         md: ['13px', '22.1px'],
         lg: ['14px', '22.1px'],
+        xl: ['16px', '26px'],
+        '2xl': ['20px', '32px'],
+        '3xl': ['24px', '36px'],
       },
       spacing: {
         1: '8px',

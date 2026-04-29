@@ -15,6 +15,8 @@ export type Project = {
   name: string;
   summary: string;
   stack: string[];
+  stats?: { label: string; value: string }[];
+  highlights?: string[];
   href: string;
   status: string;
 };

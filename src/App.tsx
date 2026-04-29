@@ -73,55 +73,106 @@ function App() {
             </div>
           </div>
 
-          <Section
-            id="projects"
-            title="./projects"
-            summary="temporary project cards for testing spacing, hierarchy, and terminal-style presentation."
-          >
-            <div className="grid gap-6 lg:grid-cols-3">
-              {projects.map((project, index) => (
-                <TerminalWindow
-                  key={project.name}
-                  title={project.name}
-                  subtitle={project.status}
-                  className="motion-safe:animate-reveal"
-                >
-                  <div style={{ animationDelay: `${index * 120}ms` }} className="space-y-5">
-                    <p className="text-md text-textSecondary">{project.summary}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.stack.map((item) => (
-                        <span key={item} className="bg-muted px-3 py-1 font-mono text-md text-textPrimary">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="font-mono text-md text-signal">{project.status}</p>
+          <div id="projects" className="py-24 border-t border-muted/30">
+            <div className="mx-auto max-w-3xl px-6 font-mono space-y-24">
+              {projects.map((project) => (
+                <div key={project.name} className="flex flex-col">
+                  {/* Prompt */}
+                  <div className="mb-6 flex items-center gap-2 text-md">
+                    <span className="text-textSecondary">~/zenodefault</span>
+                    <span className="text-signal">▸</span>
+                    <span className="text-white">cat ./projects/{project.name.toLowerCase().replace(/[\s\(\)]+/g, '')}</span>
                   </div>
-                </TerminalWindow>
-              ))}
-            </div>
-          </Section>
 
-          <Section
-            id="skills"
-            title="./skills"
-            summary="temporary skill groups to help shape the final content layout."
-          >
-            <div className="grid gap-6 md:grid-cols-3">
-              {skillGroups.map((group) => (
-                <TerminalWindow key={group.title} title={group.title} subtitle="active toolset">
-                  <ul className="space-y-3 font-mono text-md text-textSecondary">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-signal" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </TerminalWindow>
+                  {/* Content Block */}
+                  <div className="space-y-6">
+                    <h3 className="text-xl text-white">
+                      {project.name} <span className="text-textSecondary">— {project.status}</span>
+                    </h3>
+                    
+                    <p className="text-md text-textPrimary leading-relaxed">
+                      {project.summary}
+                    </p>
+
+                    <div className="text-textSecondary text-sm">
+                      {project.href.replace('https://github.com/', '')}
+                    </div>
+
+                    {/* Stats / Stack */}
+                    {project.stats && (
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4">
+                        {project.stats.map((stat) => (
+                          <div key={stat.label} className="flex flex-col">
+                            <span className="text-xl text-white">{stat.value}</span>
+                            <span className="text-xs text-textSecondary mt-1 uppercase tracking-wider">
+                              {stat.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Logs / Highlights */}
+                    {project.highlights && (
+                      <div className="pt-6">
+                        <div className="text-md text-textPrimary mb-4 font-bold tracking-tight">Project Operator</div>
+                        <div className="space-y-3">
+                          {project.highlights.map((highlight, i) => (
+                            <div key={i} className="flex items-start gap-3 text-textPrimary text-sm md:text-md">
+                              <span className="text-signal mt-1">●</span>
+                              <span className="leading-snug opacity-90">{highlight}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Bottom link */}
+                    <div className="pt-6">
+                       <a 
+                         href={project.href} 
+                         target="_blank" 
+                         rel="noreferrer" 
+                         className="text-signal hover:underline decoration-signal underline-offset-8 transition-all font-bold"
+                       >
+                         {project.href.replace('https://', '')}
+                       </a>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
-          </Section>
+          </div>
+
+          <div id="skills" className="py-24 border-t border-muted/30">
+            <div className="mx-auto max-w-3xl px-6 font-mono">
+              <div className="mb-12 flex items-center gap-2 text-sm md:text-md opacity-70">
+                <span className="text-signal">zenodefault@system</span>
+                <span className="text-textSecondary">:</span>
+                <span className="text-textInverse">~</span>
+                <span className="text-textSecondary">$</span>
+                <span className="text-white">env --capabilities</span>
+              </div>
+
+              <div className="grid gap-12 md:grid-cols-2">
+                {skillGroups.map((group) => (
+                  <div key={group.title} className="space-y-6">
+                    <h3 className="text-xl text-white flex items-center gap-3">
+                      <span className="text-signal">#</span> {group.title}
+                    </h3>
+                    <ul className="space-y-3">
+                      {group.items.map((item) => (
+                        <li key={item} className="flex items-center gap-3 text-textPrimary text-lg">
+                          <span className="text-textSecondary select-none">::</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           <div id="contact" className="py-24 border-t border-muted/30">
             <div className="mx-auto max-w-3xl px-6 font-mono">

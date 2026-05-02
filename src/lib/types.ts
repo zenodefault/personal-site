@@ -1,3 +1,5 @@
+import type { IconType } from 'react-icons';
+
 export type NavItem = {
   id: string;
   label: string;
@@ -21,13 +23,19 @@ export type Project = {
   status: string;
 };
 
+export type Skill = {
+  name: string;
+  icon: IconType;
+};
+
 export type SkillGroup = {
   title: string;
-  items: string[];
+  items: (string | Skill)[];
 };
 
 export type ContactLink = {
   label: string;
   value: string;
   href: string;
+  icon: IconType;
 };

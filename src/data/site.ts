@@ -1,3 +1,22 @@
+import { 
+  SiFlutter, 
+  SiDart, 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiCplusplus, 
+  SiC, 
+  SiFastapi, 
+  SiPython, 
+  SiFirebase, 
+  SiPostgresql, 
+  SiLinux, 
+  SiX, 
+  SiGithub, 
+  SiAnilist, 
+  SiSpotify
+} from 'react-icons/si';
+import { TbBrain, TbLayoutBoard } from 'react-icons/tb';
 import type { ContactLink, NavItem, Project, SkillGroup } from '../lib/types';
 
 export const navItems: NavItem[] = [
@@ -34,13 +53,13 @@ export const projects: Project[] = [
       { value: 'Cross-platform', label: 'deployment' }
     ],
     highlights: [
-      'Offline-first architecture with local JSON food database.',
-      'Habit streaks + visual analytics dashboard.',
-      'Exercise library with muscle-group mapping.',
-      'Lightweight (~15MB APK), no cloud dependency.'
+      '// Offline-first architecture with local JSON food database.',
+      '// Habit streaks + visual analytics dashboard.',
+      '// Exercise library with muscle-group mapping.',
+      '// Lightweight (~15MB APK), no cloud dependency.'
     ],
     href: 'https://github.com/zenodefault/sumi',
-    status: 'v1.0 (Feb 2026)',
+    status: 'v1.0',
   },
   {
     name: 'MyCampusMate',
@@ -53,13 +72,13 @@ export const projects: Project[] = [
       { value: 'Automated', label: 'scraping' }
     ],
     highlights: [
-      'Real-time attendance sync with college portal.',
-      'Subject-wise analytics + assignment reminders.',
-      'Campus news scraper + academic calendar.',
-      'Production-ready: APK releases, multi-platform builds.'
+      '// Real-time attendance sync with college portal.',
+      '// Subject-wise analytics + assignment reminders.',
+      '// Campus news scraper + academic calendar.',
+      '// Production-ready: APK releases, multi-platform builds.'
     ],
     href: 'https://github.com/zenodefault/my_campus_mate7',
-    status: 'Active (Oct 2025)',
+    status: 'Active',
   },
   {
     name: 'Nexus (EVP)',
@@ -72,13 +91,13 @@ export const projects: Project[] = [
       { value: 'Automated', label: 'pipelines' }
     ],
     highlights: [
-      'Modular agent architecture (Literature -> Hypothesis -> Scoring).',
-      '"Syntropy" cross-domain knowledge bridging feature.',
-      'Flexible LLM backend: mock -> local -> cloud.',
-      'Research-grade: PDF audit, concept graphs, JSON contracts.'
+      '// Modular agent architecture (Literature -> Hypothesis -> Scoring).',
+      '// "Syntropy" cross-domain knowledge bridging feature.',
+      '// Flexible LLM backend: mock -> local -> cloud.',
+      '// Research-grade: PDF audit, concept graphs, JSON contracts.'
     ],
     href: 'https://github.com/zenodefault/nexus',
-    status: 'Research (Mar 2026)',
+    status: 'Research',
   },
   {
     name: 'fileman',
@@ -91,13 +110,13 @@ export const projects: Project[] = [
       { value: 'O(1)', label: 'caching' }
     ],
     highlights: [
-      '<500 lines of core logic — clean, readable systems code.',
-      'No runtime dependencies beyond ncurses.',
-      'Human-readable sizes (B/KB/MB/GB) + performance caching.',
-      'Great showcase of low-level C + terminal UI skills.'
+      '// <500 lines of core logic — clean, readable systems code.',
+      '// No runtime dependencies beyond ncurses.',
+      '// Human-readable sizes (B/KB/MB/GB) + performance caching.',
+      '// Great showcase of low-level C + terminal UI skills.'
     ],
     href: 'https://github.com/zenodefault/fileman',
-    status: 'Stable (Nov 2025)',
+    status: 'Stable',
   },
   {
     name: 'creatorOS',
@@ -110,34 +129,51 @@ export const projects: Project[] = [
       { value: 'Vercel', label: 'deployment' }
     ],
     highlights: [
-      'Component library with reusable UI primitives.',
-      'Firebase-ready auth + data layer.',
-      'Optimized for Vercel deployment.',
-      'Clean architecture: apps/, components/, hooks/ separation.'
+      '// Component library with reusable UI primitives.',
+      '// Firebase-ready auth + data layer.',
+      '// Optimized for Vercel deployment.',
+      '// Clean architecture: apps/, components/, hooks/ separation.'
     ],
     href: 'https://github.com/zenodefault/creatorOS',
-    status: 'WIP (Dec 2025)',
+    status: 'WIP',
   },
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Development',
-    items: ['Flutter & Dart', 'React & Next.js', 'TypeScript', 'C/C++'],
+    items: [
+      { name: 'Flutter', icon: SiFlutter },
+      { name: 'Dart', icon: SiDart },
+      { name: 'React', icon: SiReact },
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'C++', icon: SiCplusplus },
+      { name: 'C', icon: SiC },
+    ],
   },
   {
     title: 'Systems & Backend',
-    items: ['FastAPI (Python)', 'Firebase', 'PostgreSQL', 'POSIX / Linux'],
+    items: [
+      { name: 'FastAPI', icon: SiFastapi },
+      { name: 'Python', icon: SiPython },
+      { name: 'Firebase', icon: SiFirebase },
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'Linux', icon: SiLinux },
+    ],
   },
   {
     title: 'Focus Areas',
-    items: ['AI/ML Integration', 'Clean Architecture', 'Terminal UI (TUI)', 'Offline-first Apps'],
+    items: [
+      { name: 'AI/ML Integration', icon: TbBrain },
+      { name: 'Clean Architecture', icon: TbLayoutBoard },
+    ],
   },
 ];
 
 export const contactLinks: ContactLink[] = [
-  { label: 'x/twitter', value: '@zenodefault99', href: 'https://x.com/zenodefault99' },
-  { label: 'github', value: 'zenodefault', href: 'https://github.com/zenodefault' },
-  { label: 'anilist', value: 'Naveedkun', href: 'https://anilist.co/user/Naveedkun/' },
-  { label: 'spotify', value: 'zenodefault', href: 'https://open.spotify.com/user/5991xd4ts74felvg5rskl6zo7?si=sGyuk3EgRo2SZDhDKHOlgA' },
+  { label: 'x/twitter', value: '@zenodefault99', href: 'https://x.com/zenodefault99', icon: SiX },
+  { label: 'github', value: 'zenodefault', href: 'https://github.com/zenodefault', icon: SiGithub },
+  { label: 'anilist', value: 'Naveedkun', href: 'https://anilist.co/user/Naveedkun/', icon: SiAnilist },
+  { label: 'spotify', value: 'zenodefault', href: 'https://open.spotify.com/user/5991xd4ts74felvg5rskl6zo7?si=sGyuk3EgRo2SZDhDKHOlgA', icon: SiSpotify },
 ];

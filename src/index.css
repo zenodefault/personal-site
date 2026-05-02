@@ -31,9 +31,9 @@ body {
     radial-gradient(circle at top, rgb(var(--color-muted) / 0.5), transparent 35%),
     linear-gradient(180deg, rgb(var(--color-ink)), rgb(var(--color-ink)));
   color: rgb(var(--color-text-primary));
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 22.1px;
+  line-height: 1.5;
 }
 
 a {
@@ -50,9 +50,40 @@ a {
 }
 
 .scanlines {
-  background-image: linear-gradient(rgb(var(--color-text-primary) / 0.035) 1px, transparent 1px);
+  background-image: linear-gradient(rgb(var(--color-text-primary) / 0.05) 1px, transparent 1px);
   background-size: 100% 4px;
   mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.vignette {
+  background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.4) 150%);
+  pointer-events: none;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgb(var(--color-signal) / 0.5);
+}
+
+.glow-text-intense {
+  text-shadow: 0 0 15px rgb(var(--color-signal) / 0.8), 0 0 5px rgb(var(--color-signal) / 1);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-signal) / 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-signal) / 0.5);
 }
 
 :focus-visible {

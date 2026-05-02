@@ -70,45 +70,45 @@ export function CommandPalette({ items }: CommandPaletteProps) {
 
       {isOpen ? (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center bg-ink/90 px-4 pb-6 pt-20 backdrop-blur-md"
+          className="fixed inset-0 z-[100] flex items-start justify-center bg-ink/90 px-4 pb-6 pt-20 backdrop-blur-md"
           role="dialog"
           aria-modal="true"
           aria-label="Command palette"
         >
-          <div className="w-full max-w-2xl overflow-hidden rounded-xs bg-panel shadow-glow">
-            <div className="px-4 py-3">
+          <div className="w-full max-w-2xl overflow-hidden border border-signal/30 bg-panel shadow-signal-glow animate-flicker">
+            <div className="border-b border-signal/30 bg-signal/10 px-4 py-3">
               <label className="flex items-center gap-3">
-                <span className="font-mono text-md text-signal">$</span>
+                <span className="font-mono text-md text-signal glow-text">$</span>
                 <input
                   autoFocus
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="open tokens / run wcag-audit / check release"
-                  className="min-h-11 w-full bg-transparent font-mono text-md text-textPrimary outline-none placeholder:text-textSecondary"
+                  placeholder="EXECUTE_COMMAND..."
+                  className="min-h-11 w-full bg-transparent font-mono text-md text-textPrimary outline-none placeholder:text-textSecondary/50"
                 />
               </label>
             </div>
-            <div className="max-h-[60vh] overflow-y-auto p-3">
+            <div className="max-h-[60vh] overflow-y-auto p-3 custom-scrollbar">
               {filteredItems.map((item) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => jumpToSection(item.id)}
-                  className="flex min-h-11 w-full flex-col gap-2 rounded-xs px-4 py-3 text-left transition duration-instant hover:bg-muted focus:outline-none"
+                  className="group flex min-h-11 w-full flex-col gap-2 border border-transparent px-4 py-3 text-left transition-all hover:border-signal/30 hover:bg-signal/5 focus:outline-none"
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <span className="font-display text-lg text-textPrimary">{item.label}</span>
-                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-signal">
+                    <span className="font-mono text-lg text-textPrimary group-hover:text-signal group-hover:glow-text transition-colors">{item.label}</span>
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-signal/60 group-hover:text-signal transition-colors">
                       {item.command}
                     </span>
                   </div>
-                  <p className="text-md text-textSecondary">{item.description}</p>
+                  <p className="font-mono text-sm text-textSecondary group-hover:text-textPrimary transition-colors">{item.description}</p>
                 </button>
               ))}
               {filteredItems.length === 0 ? (
-                <div className="rounded-xs px-4 py-8 text-center">
-                  <p className="font-display text-lg text-textPrimary">No matching command</p>
-                  <p className="mt-2 text-md text-textSecondary">Try “tokens”, “components”, or “qa”.</p>
+                <div className="px-4 py-8 text-center font-mono">
+                  <p className="text-lg text-textPrimary">NO_MATCHING_COMMAND</p>
+                  <p className="mt-2 text-sm text-textSecondary">TRY "PROJECTS", "SKILLS", OR "CONTACT"</p>
                 </div>
               ) : null}
             </div>
